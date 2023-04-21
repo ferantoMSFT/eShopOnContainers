@@ -34,7 +34,6 @@ apt-get install azure-cli
 #setup az aks cli
 az aks install-cli
 
-
 #setup kubectl
 apt-get update
 apt-get install -y ca-certificates curl
@@ -52,7 +51,6 @@ apt-get update
 apt-get install helm
 
 #setup powershell
-
 sudo apt-get update
 sudo apt-get install -y wget apt-transport-https software-properties-common
 wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
