@@ -31,6 +31,9 @@ echo "deb [arch=`dpkg --print-architecture` signed-by=/etc/apt/keyrings/microsof
 apt-get update
 apt-get install azure-cli
 
+#setup az aks cli
+az aks install-cli
+
 
 #setup kubectl
 apt-get update
@@ -47,3 +50,14 @@ apt-get install apt-transport-https --yes
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" |  tee /etc/apt/sources.list.d/helm-stable-debian.list
 apt-get update
 apt-get install helm
+
+#setup powershell
+
+sudo apt-get update
+sudo apt-get install -y wget apt-transport-https software-properties-common
+wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y powershell
+pwsh
